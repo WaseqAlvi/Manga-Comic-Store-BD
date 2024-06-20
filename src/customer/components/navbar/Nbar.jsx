@@ -69,11 +69,21 @@ const Nbar = ({ loggedIn, Premier, setLoggedIn, setPremier, admin_status }) => {
   };
 
   return (
-    <nav className="bg-black text-white flex justify-between items-center p-4 container">
+    <nav className="bg-black text-white flex justify-between items-center px-20 py-6">
       {/* Logo */}
-      <div>
-        <Link to={"/customerView"}>HOME</Link>
-      </div>
+      <div className="ml-4 flex lg:ml-0 lg:items-center ">
+                <a href="#">
+                  <span className="sr-only">Your Company</span>
+                  <Link to="/customerView">
+                    <img
+                      className="  pb-3 rounded-full h-20 w-18 flex items-center justify-center "
+                      
+                      src="https://seeklogo.com/images/M/Manga-logo-000566115A-seeklogo.com.png"
+                      alt=""
+                    />
+                  </Link>
+                </a>
+              </div>
 
       {admin === "true" ? (
         <div>
@@ -109,9 +119,7 @@ const Nbar = ({ loggedIn, Premier, setLoggedIn, setPremier, admin_status }) => {
       </Link>
       {/* CART */}
 
-      <Link to="/wishlist" className="group -m-2 flex items-center p-2">
-        <FavoriteIcon />
-      </Link>
+      
 
       <div className="flex flex-wrap justify-center">
         <input
@@ -120,6 +128,7 @@ const Nbar = ({ loggedIn, Premier, setLoggedIn, setPremier, admin_status }) => {
           onChange={(e) => handleChange(e.target.value)}
           className="bg-gray-200 px-3 py-1 rounded-md focus:outline-none text-black"
         />
+        
 
         {/* {result.length >1 && result.length <4
           ? result.map((product) => (
@@ -141,14 +150,12 @@ const Nbar = ({ loggedIn, Premier, setLoggedIn, setPremier, admin_status }) => {
                 : ""}
             </tbody>
           </table>
-          {result.length === 0 && (
-            <p className="text-center text-xl text-gray-600 mt-4">
-              No products found
-            </p>
-          )}
+        
         </div>
       </div>
-
+      <Link to="/wishlist" className="group -m-2 flex items-center p-2">
+        <FavoriteIcon />
+      </Link>
       {/* Left section */}
       <div className="flex items-center space-x-4">
         {/* Display GO PRO button if not a Premier user and logged in */}

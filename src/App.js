@@ -83,9 +83,8 @@ function App() {
 
         <Router>
         
-        {admin && <Navigation />}
-
-        {/* {admin} */}
+       
+        {admin && <Navigation/> }
         
         
         

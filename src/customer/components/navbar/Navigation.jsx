@@ -143,10 +143,18 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
-
+  const admin = localStorage.getItem("admin");
   return (
-    
-    <div className="bg-black " style={{ backgroundImage: 'url(https://wallpaper.dog/large/20614557.jpg),url(https://wallpaper.dog/large/20614315.jpg),url(https://wallpaper.dog/large/5462974.jpg)', backgroundSize: 'contain,contain,contain',backgroundRepeat: 'no-repeat,no-repeat,no-repeat',backgroundPosition: 'right,left,center'}}>
+    <div
+      className="bg-black "
+      style={{
+        backgroundImage:
+          "url(https://wallpaper.dog/large/20614557.jpg),url(https://wallpaper.dog/large/20614315.jpg),url(https://wallpaper.dog/large/5462974.jpg)",
+        backgroundSize: "contain,contain,contain",
+        backgroundRepeat: "no-repeat,no-repeat,no-repeat",
+        backgroundPosition: "right,left,center",
+      }}
+    >
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -346,36 +354,27 @@ export default function Navigation() {
 
               {/* Logo */}
               {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"></div> */}
-              <div className="ml-4 flex lg:ml-0 lg:items-center ">
-                <a href="#">
-                  <span className="sr-only">Your Company</span>
-                  <Link to="/customerView">
-                    <img
-                      className="  pb-3 rounded-full h-20 w-18 flex items-center justify-center "
-                      
-                      src="https://seeklogo.com/images/M/Manga-logo-000566115A-seeklogo.com.png"
-                      alt=""
-                    />
-                  </Link>
-                </a>
-              </div>
 
               {/* Flyout menus */}
-             
 
               {/* Logo */}
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {/* <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Sign inn
-                  </a> */}
-                  <Link to="/addProduct" className="btn bg-white">Add product</Link>
-                  
+                  {/* <Link to="/addProduct" className="btn bg-white">
+                    Add product
+                  </Link> */}
 
+                  
+                    <Link to="/addProduct" className="btn bg-white">
+                      Add product
+                    </Link>
+                    <Link to="/customerView" className="btn bg-white">
+                      Customer View
+                    </Link>
+                 
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
 
-                  <Link to="/customerView" className="btn bg-white">Customer View</Link>
                   {/* <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Create account
                   </a> */}
